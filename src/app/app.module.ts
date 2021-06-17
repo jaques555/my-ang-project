@@ -3,10 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { MyformComponent } from './myform/myform.component';
+import { MylistaComponent } from './mylista/mylista.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    MyformComponent,
+    MylistaComponent
   ],
   imports: [
     BrowserModule,
