@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MyformComponent } from './myform/myform.component';
 import { MylistaComponent } from './mylista/mylista.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http'
+import { UtenteService } from './services/utente.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,11 @@ import { MylistaComponent } from './mylista/mylista.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UtenteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,7 +16,8 @@ export class HeaderComponent implements OnInit {
 
   vaiForm() {
 
-    this.router.navigate(['form']);
+   this.router.navigate(['form']);
+    
   }
 
 
