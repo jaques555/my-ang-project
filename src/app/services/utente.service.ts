@@ -21,4 +21,9 @@ export class UtenteService {
 
     return this.http.get<Array<Utente>>('http://localhost:3000/unsecured/users');
   }
+
+  eliminaUtente(id:string): Observable<any> {
+
+    return this.http.delete('http://localhost:3000/unsecured/user/'+id);
+  }
 }

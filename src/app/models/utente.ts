@@ -1,6 +1,8 @@
 export class Utente {
 
-    nome: string;
+    _id!: string
 
-    cognome: string;
+    nome?: string;
+
+    cognome?: string;
 }

@@ -10,24 +10,26 @@ import { UtenteService } from '../services/utente.service';
 })
 export class MyformComponent implements OnInit {
 
-  utenteForm: FormGroup;
+  utenteForm: FormGroup = new FormGroup({});
 
-  constructor(private fb: FormBuilder, private userService: UtenteService) { }
+  constructor(private fb: FormBuilder, private userService: UtenteService) { 
+    
+  }
 
   ngOnInit() {
-
     this.utenteForm = this.fb.group({
 
       nome: new FormControl('',Validators.required),
       cognome: new FormControl('',Validators.required)
     });
+
   }
 
   inviaDati() {
  
    const utente = new Utente();
-   utente.nome =  this.utenteForm.get('nome').value;
-   utente.cognome =  this.utenteForm.get('cognome').value;
+   utente.nome =  this.utenteForm.get('nome')!.value;
+   utente.cognome =  this.utenteForm.get('cognome')!.value;
 
    this.userService.invioDati(utente).subscribe(resp => {
 

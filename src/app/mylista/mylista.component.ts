@@ -9,7 +9,7 @@ import { UtenteService } from '../services/utente.service';
 })
 export class MylistaComponent implements OnInit {
 
-  utenti: Utente[];
+  utenti: Utente[] = [];
 
   constructor(private utenteService:UtenteService) { }
 
@@ -19,6 +19,15 @@ export class MylistaComponent implements OnInit {
 
       this.utenti = resp;
     });
+  }
+
+
+  eliminaUtente(event) {
+
+     this.utenteService.eliminaUtente(event).subscribe(resp=>{
+
+          this.ngOnInit();
+     });
   }
 
 }
