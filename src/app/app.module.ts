@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MyformComponent } from './myform/myform.component';
 import { MylistaComponent } from './mylista/mylista.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http'
 import { UtenteService } from './services/utente.service';
 import { MytableComponent } from './mytable/mytable.component';
@@ -25,6 +25,7 @@ import { FirstUppercasePipe } from './pipe/first-uppercase.pipe';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [UtenteService],

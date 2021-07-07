@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Utente } from '../models/utente';
 import { UtenteService } from '../services/utente.service';
 
@@ -11,6 +12,8 @@ export class MylistaComponent implements OnInit {
 
   utenti: Utente[] = [];
 
+
+
   constructor(private utenteService:UtenteService) { }
 
   ngOnInit() {
@@ -19,6 +22,8 @@ export class MylistaComponent implements OnInit {
 
       this.utenti = resp;
     });
+
+
   }
 
 
@@ -28,6 +33,18 @@ export class MylistaComponent implements OnInit {
 
           this.ngOnInit();
      });
+  }
+
+  ricercaUtente(myform) {
+
+    const nome = myform.form.controls.nome.value;
+    const cognome = myform.form.controls.cognome.value;
+
+    this.utenteService.ricercaUtente(nome, cognome).subscribe(resp=>{
+
+      this.utenti = resp;
+
+    });
   }
 
 }
