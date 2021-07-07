@@ -4,7 +4,7 @@
         <label for="nome">RICERCA PER NOME</label>
         <input name="nome" type="text" ngModel pattern="[A-Za-z ]+">
         <label for="cognome">RICERCA PER COGNOME</label>
-        <input name="cognome" type="text" ngModel pattern="[A-Za-z ]+" maxlength="10" required>
+        <input name="cognome" type="text" ngModel pattern="[A-Za-z ]+">
         <button type="submit">RICERCA</button>
         <div *ngIf="myform.form.status === 'INVALID'">Caratteri non consentiti</div>
     </form>
